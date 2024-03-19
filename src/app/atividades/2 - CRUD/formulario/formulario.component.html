@@ -1,0 +1,70 @@
+<form style="display: flex;flex-direction: column;gap: 20px;" [formGroup]="myForm" (ngSubmit)="submit()" #formDir="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input
+      type="text"
+      formControlName="nome"
+      matInput
+      placeholder="Digite seu nome"
+      minlength=3
+      maxlength=30
+      required
+    >
+    <!-- <div *ngIf="nome.invalid && formDir.submitted">
+      <p *ngIf="nome.errors?.['required']" style="color: red;">Nome é obrigatório!</p>
+      <p *ngIf="nome.errors?.['minlength']" style="color: red;">Deve ter no mínimo 3 dígitos!</p>
+      <p *ngIf="nome.errors?.['maxlength']" style="color: red;">Deve ter no máximo 30 dígitos!</p>
+    </div> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="text"
+      formControlName="email"
+      matInput
+      placeholder="Digite seu email"
+      required
+    >
+    <!-- <div *ngIf="email.invalid && formDir.submitted">
+      <p style="color: red;">E-mail ou senha inválido!</p>
+    </div> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Senha</mat-label>
+    <input
+      type="password"
+      formControlName="senha"
+      matInput
+      placeholder="Digite uma senha"
+      required
+    >
+    <!-- <div *ngIf="senha.invalid && formDir.submitted">
+      <p style="color: red;">E-mail ou senha inválido!</p>
+    </div> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>CEP</mat-label>
+    <input
+      type="text"
+      formControlName="cep"
+      matInput
+      placeholder="Digite o CEP"
+      required
+    >
+    <!-- <div *ngIf="cep.invalid && formDir.submitted">
+      <p *ngIf="cep.errors?.['required']" style="color: red;">CEP é obrigatório!</p>
+    </div> -->
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Logradouro</mat-label>
+    <input
+      type="text"
+      formControlName="logradouro"
+      matInput
+      placeholder="Digite algo"
+      aria-disabled
+    >
+  </mat-form-field>
+  <button mat-raised-button type="submit">Salvar</button>
+  <button mat-raised-button matDialogClose>Cancelar</button>
+</form>
